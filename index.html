@@ -98,6 +98,33 @@ header.top .btn{padding:6px 20px;font-size:.95rem}
   </div>
 </div></div>
 
+<section id="video"><div class="wrap">
+<style>
+#video .vid{position:relative;max-width:900px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:2px solid var(--accent);box-shadow:0 12px 40px rgba(0,0,0,.25);background:#000}
+#video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+#video #vplay{position:absolute;inset:0;margin:auto;width:96px;height:96px;border-radius:50%;border:4px solid #fff;background:rgba(15,107,92,.9);color:#fff;font-size:44px;line-height:1;cursor:pointer;padding-inline-start:8px;transition:transform .15s}
+#video #vplay:hover,#video #vplay:focus-visible{transform:scale(1.1);outline:3px solid var(--accent)}
+#video .vid.on #vplay{display:none}
+#video .note{text-align:center;color:var(--muted);margin-top:14px}
+</style>
+<h2 style="text-align:center">شاهد التطبيق في أقل من دقيقتين</h2>
+<div class="vid" id="vbox">
+<video id="vv" controls preload="none" playsinline poster="img/miniature.jpg" aria-label="فيديو تعريفي بتطبيق إدارة جمعية كفالة الأيتام والأرامل">
+<source src="video/presentation.mp4" type="video/mp4">
+متصفحك لا يدعم تشغيل الفيديو. <a href="video/presentation.mp4">حمّل الفيديو</a>
+</video>
+<button id="vplay" type="button" aria-label="تشغيل الفيديو">&#9654;</button>
+</div>
+<p class="note">فيديو تعريفي بالعربية الفصحى مع ترجمة مكتوبة · التطبيق مجاني · صدقة جارية</p>
+<script>
+(function(){var v=document.getElementById('vv'),b=document.getElementById('vplay'),x=document.getElementById('vbox');
+b.addEventListener('click',function(){x.classList.add('on');v.play();});
+v.addEventListener('play',function(){x.classList.add('on');});
+v.addEventListener('ended',function(){x.classList.remove('on');});})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"تطبيق مجاني لإدارة جمعية كفالة الأيتام والأرامل","description":"عرض سريع لتطبيق مكتبي عربي مجاني يعمل دون إنترنت على ويندوز ولينكس لإدارة ملفات الأسر والكفالات والتبرعات والتقارير.","thumbnailUrl":"https://cavalkhalid-pixel.github.io/orphelin/img/miniature.jpg","contentUrl":"https://cavalkhalid-pixel.github.io/orphelin/video/presentation.mp4","uploadDate":"2026-11-23","duration":"PT1M16S","inLanguage":"ar"}</script>
+</div></section>
+
 <section id="features"><div class="wrap">
   <h2>ماذا يقدّم التطبيق؟</h2>
   <p class="sub">صُمّم انطلاقاً من احتياجات جمعية حقيقية لكفالة الأيتام والأرامل، ثم عُمّم ليناسب الجمعيات الصغيرة والمتوسطة.</p>
