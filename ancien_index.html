@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نظام إدارة جمعيات كفالة الأيتام والأرامل – تطبيق مكتبي بالعربية</title>
+<meta name="description" content="تطبيق مكتبي بالعربية الكاملة لإدارة ملفات الأسر والأرامل والأيتام والكفالات والتبرعات والوصولات والتقارير. يعمل دون إنترنت على ويندوز ولينكس. تحميل مباشر ومجاني، وهو صدقة جارية.">
+<meta name="keywords" content="برنامج إدارة جمعية, كفالة الأيتام, برنامج جمعية خيرية, إدارة الأرامل والأيتام, برنامج تبرعات, وصولات التبرع, تقارير الجمعيات, برنامج عربي مفتوح, تطبيق جمعيات المجتمع المدني">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://cavalkhalid-pixel.github.io/orphelin/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="نظام إدارة جمعيات كفالة الأيتام والأرامل">
+<meta property="og:description" content="ملفات الأسر، الكفالات، التبرعات، الوصولات والتقارير في تطبيق واحد بالعربية، يعمل دون إنترنت.">
+<meta property="og:url" content="https://cavalkhalid-pixel.github.io/orphelin/">
+<meta property="og:image" content="https://cavalkhalid-pixel.github.io/orphelin/img/miniature.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"نظام إدارة جمعيات كفالة الأيتام والأرامل","applicationCategory":"BusinessApplication","operatingSystem":"Windows, Linux","inLanguage":"ar","description":"تطبيق مكتبي بالعربية لإدارة ملفات الأسر والأرامل والأيتام والكفالات والتبرعات والتقارير.","softwareVersion":"0.1.0 (تجريبية)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://cavalkhalid-pixel.github.io/orphelin/"}
+</script>
+<style>
+:root{
+  --bg:#fbf8f2; --surface:#ffffff; --ink:#1d2a2a; --muted:#5b6b6b;
+  --brand:#0f6b5c; --brand-ink:#ffffff; --accent:#c8962e; --line:#e6dfd0; --soft:#eef5f2;
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101a19; --surface:#17231f; --ink:#eef2ef; --muted:#9db0aa;
+    --brand:#3fb59f; --brand-ink:#08201b; --accent:#e0b04e; --line:#273632; --soft:#14312b;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Tajawal",system-ui,"Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;font-size:17px}
+a{color:var(--brand)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.logo{font-weight:800;font-size:1.05rem}
+nav a{margin-inline-start:18px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--brand)}
+@media(max-width:720px){nav{display:none}}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--brand);color:var(--brand-ink);font-weight:700;text-decoration:none;border:2px solid var(--brand)}
+.btn.alt{background:transparent;color:var(--brand)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.hero{padding:64px 0 48px;background:radial-gradient(1200px 420px at 80% -10%,var(--soft),transparent)}
+.hero h1{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.4;margin:0 0 14px;font-weight:800}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:44rem;margin:0 0 26px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.badge{display:inline-block;background:var(--soft);color:var(--brand);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:.85rem;font-weight:700;margin-bottom:16px}
+section{padding:52px 0}
+section h2{font-size:1.7rem;margin:0 0 8px;font-weight:800}
+section p.sub{color:var(--muted);margin:0 0 28px;max-width:46rem}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card h3{margin:0 0 6px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.8}
+.steps{counter-reset:s;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.steps .card{position:relative;padding-top:34px}
+.steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;inset-inline-start:18px;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#2b1d00;font-weight:800;display:grid;place-items:center}
+.shots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.shot{border:2px dashed var(--line);border-radius:var(--radius);min-height:190px;display:grid;place-items:center;color:var(--muted);text-align:center;padding:16px;background:var(--surface)}
+.shot img{max-width:100%;border-radius:12px;border:1px solid var(--line)}
+.note{background:var(--soft);border:1px solid var(--line);border-inline-start:5px solid var(--accent);border-radius:12px;padding:16px 18px;color:var(--ink)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--muted)}
+.dl{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.dl .card ul{padding-inline-start:20px;margin:8px 0 14px;color:var(--muted);font-size:.95rem}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:.92rem}
+code{direction:ltr;unicode-bidi:embed;background:var(--soft);padding:1px 6px;border-radius:6px;font-size:.9em}
+header.top .btn{padding:6px 20px;font-size:.95rem}
+.shot.has-img{border:1px solid var(--line);padding:0;overflow:hidden;display:block}
+.shot.has-img img{display:block;width:100%;height:auto;border:0;border-radius:0}
+.language-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:22px}
+.language-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.language-card h3{margin:0 0 10px;font-size:1.2rem}
+.language-card p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.85}
+.language-card[lang="fr"],.language-card[lang="en"]{direction:ltr;text-align:left}
+.language-card[lang="ar"]{direction:rtl;text-align:right}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="logo">🌙 نظام إدارة جمعيات كفالة الأيتام والأرامل</div>
+  <nav aria-label="التنقل">
+    <a href="#features">المميزات</a><a href="#how">طريقة العمل</a><a href="#screens">لقطات</a><a href="#faq">أسئلة شائعة</a><a href="#download">التحميل</a><a href="#feedback">رأيكم</a>
+  </nav>
+  <a class="btn" href="#download">حمّل الآن</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <span class="badge">نسخة تجريبية 0.1.0</span>
+  <h1>كل ملفات جمعيتكم في تطبيق واحد، بالعربية الكاملة</h1>
+  <p class="lead">تطبيق مكتبي لإدارة الأسر والأرامل والأيتام والكفالات والتبرعات والوصولات والاتفاقيات والتقارير. يعمل على حاسوبكم دون الحاجة إلى إنترنت، وواجهته كلها عربية من اليمين إلى اليسار.</p>
+  <div class="cta">
+    <a class="btn" href="#download">حمّل التطبيق</a>
+    <a class="btn alt" href="#feedback">شاركونا رأيكم</a>
+  </div>
+</div></div>
+
+<section id="video"><div class="wrap">
+<style>
+#video .vid{position:relative;max-width:900px;margin:0 auto;border-radius:var(--radius);overflow:hidden;border:2px solid var(--accent);box-shadow:0 12px 40px rgba(0,0,0,.25);background:#000}
+#video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+#video #vplay{position:absolute;inset:0;margin:auto;width:96px;height:96px;border-radius:50%;border:4px solid #fff;background:rgba(15,107,92,.9);color:#fff;font-size:44px;line-height:1;cursor:pointer;padding-inline-start:8px;transition:transform .15s}
+#video #vplay:hover,#video #vplay:focus-visible{transform:scale(1.1);outline:3px solid var(--accent)}
+#video .vid.on #vplay{display:none}
+#video .note{text-align:center;color:var(--muted);margin-top:14px}
+</style>
+<h2 style="text-align:center">شاهد التطبيق في أقل من دقيقتين</h2>
+<div class="vid" id="vbox">
+<video id="vv" controls preload="none" playsinline poster="img/miniature.jpg" aria-label="فيديو تعريفي بتطبيق إدارة جمعية كفالة الأيتام والأرامل">
+<source src="video/presentation.mp4" type="video/mp4">
+متصفحك لا يدعم تشغيل الفيديو. <a href="video/presentation.mp4">حمّل الفيديو</a>
+</video>
+<button id="vplay" type="button" aria-label="تشغيل الفيديو">&#9654;</button>
+</div>
+<p class="note">فيديو تعريفي بالعربية الفصحى مع ترجمة مكتوبة · التطبيق مجاني · صدقة جارية</p>
+<script>
+(function(){var v=document.getElementById('vv'),b=document.getElementById('vplay'),x=document.getElementById('vbox');
+b.addEventListener('click',function(){x.classList.add('on');v.play();});
+v.addEventListener('play',function(){x.classList.add('on');});
+v.addEventListener('ended',function(){x.classList.remove('on');});})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"تطبيق مجاني لإدارة جمعية كفالة الأيتام والأرامل","description":"عرض سريع لتطبيق مكتبي عربي مجاني يعمل دون إنترنت على ويندوز ولينكس لإدارة ملفات الأسر والكفالات والتبرعات والتقارير.","thumbnailUrl":"https://cavalkhalid-pixel.github.io/orphelin/img/miniature.jpg","contentUrl":"https://cavalkhalid-pixel.github.io/orphelin/video/presentation.mp4","uploadDate":"2026-11-23","duration":"PT1M16S","inLanguage":"ar"}</script>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <h2>ماذا يقدّم التطبيق؟</h2>
+  <p class="sub">صُمّم انطلاقاً من احتياجات جمعية حقيقية لكفالة الأيتام والأرامل، ثم عُمّم ليناسب الجمعيات الصغيرة والمتوسطة.</p>
+  <div class="grid">
+    <div class="card"><h3>ملفات الأسر والأرامل والأيتام</h3><p>ملف شامل لكل أسرة، مع بيانات الأرامل والأيتام والأوصياء، وروابط للانتقال بين الملفات بسهولة.</p></div>
+    <div class="card"><h3>الكفالات والكفلاء</h3><p>تسجيل الكفلاء والمتبرعين (أشخاصاً وجهات)، وربط الكفالات بالأيتام، ومتابعة الاستحقاقات والمتأخرات.</p></div>
+    <div class="card"><h3>التبرعات والوصولات</h3><p>تسجيل التبرعات وإصدار وصولات مرقّمة بتسلسل متصل، مع إمكانية إعادة الطباعة.</p></div>
+    <div class="card"><h3>المالية وحالات الصرف</h3><p>دفتر الصندوق والبنك، وحالات الصرف الشهرية بخطوتي مصادقة وتنفيذ، وصندوق الاستمرارية.</p></div>
+    <div class="card"><h3>بحث متقدم وفلاتر</h3><p>شريط بحث وفلاتر في كل قائمة، وبحث متقدم بمعايير متعددة، مع تصدير النتائج إلى Excel.</p></div>
+    <div class="card"><h3>تقارير ولوحة قيادة</h3><p>لوحة قيادة عند فتح التطبيق، وتقارير الأنشطة والمالية جاهزة للاطلاع والتصدير.</p></div>
+    <div class="card"><h3>الشركاء والاتفاقيات</h3><p>تسجيل الشركاء والاتفاقيات والأنشطة ومستنداتها في مكان واحد منظّم.</p></div>
+    <div class="card"><h3>نسخ احتياطي بنقرة</h3><p>نسخة احتياطية مؤرَّخة من القائمة، ومجلدات واضحة للبيانات والنسخ والمستندات.</p></div>
+  </div>
+</div></section>
+
+<section id="how" style="background:var(--soft)"><div class="wrap">
+  <h2>كيف تبدأون؟</h2>
+  <p class="sub">لا تثبيت معقّد، ولا حاجة إلى برامج إضافية أو صلاحيات المدير.</p>
+  <div class="steps">
+    <div class="card"><h3>حمّلوا الحزمة</h3><p>اختاروا الحزمة المناسبة لنظامكم (ويندوز أو لينكس) وحمّلوها مباشرة، دون تسجيل.</p></div>
+    <div class="card"><h3>فكّوا الضغط وشغّلوا</h3><p>على ويندوز: فك ضغط الملف ثم تشغيل <code>AssociationOrphelins.exe</code>. على لينكس: استخراج الأرشيف ثم تشغيل البرنامج.</p></div>
+    <div class="card"><h3>ابدأوا بالعمل</h3><p>يُنشئ التطبيق قاعدة بيانات فارغة عند أول تشغيل. أضيفوا أسرة، ثم أرملة، ثم يتيماً، وجرّبوا القوائم والتقارير.</p></div>
+  </div>
+</div></section>
+
+<section id="screens"><div class="wrap">
+  <h2>لقطات من التطبيق</h2>
+  <p class="sub">اللقطات التالية مأخوذة من بيانات تجريبية وهمية، وليست من بيانات حقيقية.</p>
+  <div class="shots">
+    <div class="shot has-img"><img src="img/dashboard.png" alt="لوحة القيادة في التطبيق" loading="lazy"></div>
+    <div class="shot has-img"><img src="img/orphelins.png" alt="قائمة الأيتام في التطبيق" loading="lazy"></div>
+    <div class="shot has-img"><img src="img/famille.png" alt="ملف الأسرة في التطبيق" loading="lazy"></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>المنصّات والمتطلبات</h2>
+  <div class="grid">
+    <div class="card"><h3>ويندوز 10 و11 (64 بت)</h3><p>حزمة محمولة: فك ضغط ثم تشغيل. لا يلزم تثبيت Java. قد يعرض ويندوز تحذير SmartScreen لأن التطبيق غير موقّع رقمياً.</p></div>
+    <div class="card"><h3>لينكس (64 بت)</h3><p>أرشيف <code>tar.gz</code> عام، وحزمة <code>.deb</code> لتوزيعات ديبيان وأوبونتو ومنت. لا يلزم تثبيت Java.</p></div>
+    <div class="card"><h3>العمل دون إنترنت</h3><p>لا يحتاج التطبيق إلى اتصال بالإنترنت للعمل. البيانات تُحفظ في ملفات على حاسوبكم.</p></div>
+  </div>
+  <div class="note" style="margin-top:20px"><strong>تنبيه مهم حول البيانات:</strong> المستعمل هو المسؤول عن تأمين بياناته. البيانات محفوظة محلياً على حاسوبكم دون كلمة سر للتطبيق، فاحموا الحاسوب بكلمة مرور، وخذوا نسخاً احتياطية منتظمة، ولا تشاركوا ملفات البيانات إلا مع من يحق له الاطلاع عليها. هذه نسخة تجريبية فاستعملوها بالتوازي مع طريقة عملكم الحالية.</div>
+</div></section>
+
+<section id="faq" style="background:var(--soft)"><div class="wrap">
+  <h2>أسئلة شائعة</h2>
+  <details><summary>لمن هذا التطبيق؟</summary><p>للجمعيات الخيرية الصغيرة والمتوسطة التي ترعى الأيتام والأرامل وتحتاج إلى تنظيم ملفات الأسر والكفالات والتبرعات في برنامج عربي بسيط.</p></details>
+  <details><summary>هل هو مصمَّم لبلد معيّن؟</summary><p>نشأ في سياق جمعية مغربية، لذلك قد تجدون مصطلحات أو ممارسات مرتبطة بالمغرب. نرحّب بملاحظاتكم لتعميمه على باقي البلدان العربية (العملة، المصطلحات، الأنظمة المحلية).</p></details>
+  <details><summary>أين تُحفظ البيانات؟</summary><p>على حاسوبكم. في ويندوز داخل مجلد <code>donnees</code> بجانب البرنامج. في لينكس داخل مجلد البيانات الخاص بالمستخدم.</p></details>
+  <details><summary>هل يمكن نقل البرنامج إلى حاسوب آخر؟</summary><p>نعم. أغلقوا البرنامج، ثم انسخوا المجلد كاملاً (على ويندوز) إلى المكان الجديد، ولا تشغّلوا نسختين على البيانات نفسها في الوقت ذاته.</p></details>
+  <details><summary>لماذا يظهر تحذير عند التشغيل على ويندوز؟</summary><p>لأن التطبيق غير موقّع رقمياً بعد. اختاروا «معلومات إضافية» ثم «تشغيل على أي حال». يمكنكم التحقق من سلامة الملف بمطابقة بصمته <code>SHA-256</code> المنشورة مع كل إصدار.</p></details>
+  <details><summary>هل هو مجاني؟</summary><p>نعم، هذا التطبيق صدقة جارية، يُقدَّم مجاناً ودون مقابل لكل من أراد الانتفاع به.</p></details>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <h2>حمّلوا التطبيق</h2>
+  <p class="sub">تحميل مباشر ومجاني، دون تسجيل ودون أي شرط. النسخة الحالية: 0.1.0 (تجريبية).</p>
+  <div class="dl">
+    <div class="card"><h3>ويندوز 10 / 11</h3><ul><li>ملف zip محمول</li><li>فك الضغط ثم تشغيل <code>AssociationOrphelins.exe</code></li></ul>
+      <a class="btn" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/AssociationOrphelins-portable.zip">تحميل نسخة ويندوز</a></div>
+    <div class="card"><h3>لينكس</h3><ul><li>أرشيف tar.gz عام لمعظم التوزيعات</li><li>حزمة deb لديبيان وأوبونتو ومنت</li></ul>
+      <a class="btn" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/Association-app-image.tar.gz">تحميل tar.gz</a>
+      <a class="btn alt" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/association-orphelins_0.1.0_amd64.deb">تحميل deb</a></div>
+  </div>
+  <p style="margin-top:18px"><a href="https://github.com/cavalkhalid-pixel/orphelin/releases">سجل الإصدارات وبصمات التحقق (SHA-256)</a></p>
+  <div class="note" style="margin-top:20px"><strong>نوصيكم بخطوة اختيارية:</strong> اشتركوا في نموذج قصير يتيح لنا إعلامكم بالإصدارات الجديدة والإصلاحات، ويتيح لكم إبلاغنا بالأخطاء والاقتراحات. لا يتوقف التحميل عليه، وهو اختياري تماماً.
+    <div style="margin-top:12px"><a class="btn alt" href="https://forms.gle/DXGK9bF4kELk6JYV9">اشتركوا في الأخبار (اختياري)</a></div></div>
+</div></section>
+
+<section id="feedback" style="background:var(--soft)"><div class="wrap">
+  <h2>رأيكم يهمّنا</h2>
+  <p class="sub">جرّبتم التطبيق؟ استبيان قصير (5 دقائق) اختياري يساعدنا على تحسينه. أخبرونا بما يعمل وما يعطّل عملكم وما ينقص.</p>
+  <a class="btn" href="https://forms.gle/2Q8PWFsgkZjAKhoSA" data-todo="lien Google Forms">املؤوا الاستبيان</a>
+  <a class="btn alt" href="mailto:cavalkhalid@gmail.com?subject=%D8%A5%D8%A8%D9%84%D8%A7%D8%BA%20%D8%B9%D9%86%20%D9%85%D8%B4%D9%83%D9%84%D8%A9" data-todo="lien page de signalement">إبلاغ عن مشكلة</a>
+</div></section>
+
+<section id="international" aria-labelledby="international-title">
+  <div class="wrap">
+    <h2 id="international-title">التعريف بالتطبيق بثلاث لغات</h2>
+    <p class="sub">تقديم موجز للتطبيق باللغة العربية والفرنسية والإنجليزية. واجهة البرنامج نفسها متاحة حالياً باللغة العربية.</p>
+    <div class="language-grid">
+      <article class="language-card" lang="ar" dir="rtl">
+        <h3>برنامج عربي لإدارة جمعيات كفالة الأيتام والأرامل</h3>
+        <p>تطبيق مكتبي مجاني لإدارة ملفات الأسر والأرامل والأيتام والكفالات والمتبرعين والتبرعات والوصولات والتقارير. يعمل دون اتصال بالإنترنت على نظامي ويندوز ولينكس، ويحفظ البيانات محلياً على الحاسوب. واجهة البرنامج باللغة العربية.</p>
+      </article>
+      <article class="language-card" lang="fr" dir="ltr">
+        <h3>Logiciel de gestion des associations de parrainage d’orphelins</h3>
+        <p>Cette application de bureau gratuite aide les associations à organiser les dossiers des familles, des veuves et des orphelins, le suivi des parrainages, des donateurs, des dons, des reçus et des rapports. Elle fonctionne hors ligne sous Windows et Linux et conserve les données sur l’ordinateur. L’interface du logiciel est actuellement en arabe.</p>
+      </article>
+      <article class="language-card" lang="en" dir="ltr">
+        <h3>Charity and orphan sponsorship management software</h3>
+        <p>This free desktop application helps charities organize family, widow and orphan records, sponsorships, donors, donations, receipts and reports. It works offline on Windows and Linux and stores data locally on the computer. The software interface is currently in Arabic.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  <p>للتواصل: <a href="mailto:cavalkhalid@gmail.com">cavalkhalid@gmail.com</a></p>
+  <p>هذا التطبيق <strong>صدقة جارية</strong>، يُقدَّم كما هو دون ضمان، والمستعمل هو المسؤول عن تأمين بياناته. الأسماء والبيانات الظاهرة في اللقطات وهمية. لا تُنشر بيانات الأيتام أو الأسر في أي مكان عام.</p>
+</footer>
+</body>
+</html>
