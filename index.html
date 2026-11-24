@@ -158,7 +158,7 @@ header .btn{padding:7px 20px;font-size:.95rem}
 #download .sec-sub{color:rgba(255,255,255,.85)}
 #download a:not(.btn){color:#fff}
 .dl{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.dcard{background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:26px;position:relative;border:4px solid transparent;transition:transform .2s}
+.d{background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:26px;position:relative;border:4px solid transparent;transition:transform .2s}
 .dcard h3{font-size:1.4rem;margin-bottom:4px}
 .dcard ul{padding-inline-start:20px;margin:8px 0 16px;color:var(--muted);font-size:.96rem}
 .dcard .btns{display:flex;flex-wrap:wrap;gap:10px}
@@ -307,11 +307,23 @@ footer p{margin:6px 0}
   <h2 class="sec-title">حمّلوا التطبيق</h2>
   <p class="sec-sub">تحميل مباشر ومجاني، دون تسجيل ودون أي شرط. النسخة الحالية: 0.1.0 (تجريبية).</p>
   <div class="dl">
-    <div class="dcard" id="card-win"><span class="reco-tag">مناسبة لجهازك</span>
-      <h3>🪟 ويندوز 10 / 11</h3>
-      <ul><li>ملف zip محمول (حوالي 103 ميغابايت)</li><li>فك الضغط ثم تشغيل <code>AssociationOrphelins.exe</code></li></ul>
-      <div class="btns"><a class="btn" data-goatcounter-click="dl-windows-zip" data-goatcounter-title="Téléchargement Windows zip" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/AssociationOrphelins-portable.zip">تحميل نسخة ويندوز</a></div>
-      <p class="cnt" id="cnt-win" hidden></p></div>
+   <div class="dcard" id="card-win"><span class="reco-tag">مناسبة لجهازك</span>
+  <h3>🪟 ويندوز 10 / 11</h3>
+  <ul>
+    <li>ملف zip محمول (حوالي 103 ميغابايت)</li>
+    <li>لا يلزم تثبيت Java أو صلاحيات المدير</li>
+  </ul>
+  <div class="btns">
+    <a class="btn" data-goatcounter-click="dl-windows-zip" data-goatcounter-title="Téléchargement Windows zip" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/AssociationOrphelins-portable.zip">تحميل نسخة ويندوز</a>
+  </div>
+  <details class="dl-help">
+    <summary>بعد تحميل ملف ‎zip‎: كيف أُشغّل البرنامج؟</summary>
+    <p>
+      فكّ الضغط عن الملف ثم شغّل <code>AssociationOrphelins.exe</code> (إذا ظهر تحذير SmartScreen اختر «معلومات إضافية» ثم «تشغيل على أي حال»).
+    </p>
+  </details>
+  <p class="cnt" id="cnt-win" hidden></p>
+</div>
     <div class="dcard" id="card-lin"><span class="reco-tag">مناسبة لجهازك</span>
       <h3>🐧 لينكس</h3>
       <ul><li>أرشيف tar.gz عام لمعظم التوزيعات (حوالي 114 ميغابايت)</li><li>حزمة deb لديبيان وأوبونتو ومنت (حوالي 95 ميغابايت)</li></ul>
