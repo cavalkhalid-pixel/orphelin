@@ -8,6 +8,8 @@
 <meta name="keywords" content="برنامج إدارة جمعية, كفالة الأيتام, برنامج جمعية خيرية, إدارة الأرامل والأيتام, برنامج تبرعات, وصولات التبرع, تقارير الجمعيات, برنامج عربي مفتوح, تطبيق جمعيات المجتمع المدني">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0f6b5c">
+<meta name="gc-code" content="">
+<!-- compteurs-v2 -->
 <link rel="canonical" href="https://cavalkhalid-pixel.github.io/orphelin/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
@@ -168,6 +170,15 @@ header .btn{padding:7px 20px;font-size:.95rem}
 .opt{margin-top:26px;background:rgba(255,255,255,.12);border:2px dashed rgba(255,255,255,.55);border-radius:18px;padding:16px 20px}
 .opt .btn{background:var(--saffron);border-color:var(--saffron);color:var(--on-saffron);margin-top:10px}
 
+/* ===== Compteurs ===== */
+.cnt{margin:12px 0 0;font-size:.92rem;color:var(--muted);min-height:1.4em}
+.cnt b{color:var(--emerald);font-size:1.05rem}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.stat{flex:1 1 200px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.5);border-radius:18px;padding:12px 20px;text-align:center}
+.stat[hidden]{display:none}
+.stat .num{display:block;font-family:"Reem Kufi",sans-serif;font-size:2rem;font-weight:700;line-height:1.3}
+.stat .lbl{font-size:.95rem;opacity:.9}
+
 /* ===== FAQ ===== */
 details{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:14px 20px;margin-bottom:10px;transition:border-color .2s}
 details[open]{border-color:var(--emerald)}
@@ -294,12 +305,18 @@ footer p{margin:6px 0}
     <div class="dcard" id="card-win"><span class="reco-tag">مناسبة لجهازك</span>
       <h3>🪟 ويندوز 10 / 11</h3>
       <ul><li>ملف zip محمول (حوالي 103 ميغابايت)</li><li>فك الضغط ثم تشغيل <code>AssociationOrphelins.exe</code></li></ul>
-      <div class="btns"><a class="btn" data-goatcounter-click="dl-windows-zip" data-goatcounter-title="Téléchargement Windows zip" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/AssociationOrphelins-portable.zip">تحميل نسخة ويندوز</a></div></div>
+      <div class="btns"><a class="btn" data-goatcounter-click="dl-windows-zip" data-goatcounter-title="Téléchargement Windows zip" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/AssociationOrphelins-portable.zip">تحميل نسخة ويندوز</a></div>
+      <p class="cnt" id="cnt-win" hidden></p></div>
     <div class="dcard" id="card-lin"><span class="reco-tag">مناسبة لجهازك</span>
       <h3>🐧 لينكس</h3>
       <ul><li>أرشيف tar.gz عام لمعظم التوزيعات (حوالي 114 ميغابايت)</li><li>حزمة deb لديبيان وأوبونتو ومنت (حوالي 95 ميغابايت)</li></ul>
       <div class="btns"><a class="btn" data-goatcounter-click="dl-linux-targz" data-goatcounter-title="Téléchargement Linux tar.gz" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/Association-app-image.tar.gz">تحميل tar.gz</a>
-      <a class="btn alt" data-goatcounter-click="dl-linux-deb" data-goatcounter-title="Téléchargement Linux deb" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/association-orphelins_0.1.0_amd64.deb">تحميل deb</a></div></div>
+      <a class="btn alt" data-goatcounter-click="dl-linux-deb" data-goatcounter-title="Téléchargement Linux deb" href="https://github.com/cavalkhalid-pixel/orphelin/releases/download/v0.1.0/association-orphelins_0.1.0_amd64.deb">تحميل deb</a></div>
+      <p class="cnt" id="cnt-lin" hidden></p></div>
+  </div>
+  <div class="stats">
+    <div class="stat" id="st-dl" hidden><span class="num" id="n-dl">0</span><span class="lbl">إجمالي مرات التحميل</span></div>
+    <div class="stat" id="st-vis" hidden><span class="num" id="n-vis">0</span><span class="lbl">عدد زيارات الموقع</span></div>
   </div>
   <p style="margin:20px 0 0"><a href="https://github.com/cavalkhalid-pixel/orphelin/releases">سجل الإصدارات وبصمات التحقق (SHA-256)</a></p>
   <div class="opt"><strong>نوصيكم بخطوة اختيارية:</strong> اشتركوا في نموذج قصير يتيح لنا إعلامكم بالإصدارات الجديدة والإصلاحات، ويتيح لكم إبلاغنا بالأخطاء والاقتراحات. لا يتوقف التحميل عليه، وهو اختياري تماماً.<br>
@@ -394,6 +411,33 @@ footer p{margin:6px 0}
     hero.textContent='حمّل نسخة لينكس';
   }
 
+  /* Compteurs : téléchargements (API publique GitHub) et visites (GoatCounter) */
+  function fmt(n){try{return Number(n).toLocaleString('en-US');}catch(e){return String(n);}}
+  function show(id,html){var e=document.getElementById(id);if(e){e.innerHTML=html;e.hidden=false;}}
+  fetch('https://api.github.com/repos/cavalkhalid-pixel/orphelin/releases',{headers:{'Accept':'application/vnd.github+json'}})
+    .then(function(r){return r.ok?r.json():Promise.reject();})
+    .then(function(rel){
+      var tot=0,win=0,tgz=0,deb=0;
+      rel.forEach(function(r){(r.assets||[]).forEach(function(a){
+        var c=a.download_count||0, n=a.name||'';
+        if(/\.(zip|tar\.gz|deb)$/i.test(n)){tot+=c;}
+        if(/\.zip$/i.test(n))win+=c; else if(/\.tar\.gz$/i.test(n))tgz+=c; else if(/\.deb$/i.test(n))deb+=c;
+      });});
+      show('cnt-win','تم تحميلها <b>'+fmt(win)+'</b> مرة');
+      show('cnt-lin','tar.gz: <b>'+fmt(tgz)+'</b> · deb: <b>'+fmt(deb)+'</b>');
+      document.getElementById('n-dl').textContent=fmt(tot); document.getElementById('st-dl').hidden=false;
+    }).catch(function(){});
+  var gc=(document.querySelector('meta[name=gc-code]')||{}).content||'';
+  if(/^[a-z0-9-]+$/i.test(gc)){
+    var sc=document.createElement('script'); sc.async=true;
+    sc.setAttribute('data-goatcounter','https://'+gc+'.goatcounter.com/count');
+    sc.src='https://gc.zgo.at/count.js'; document.body.appendChild(sc);
+    fetch('https://'+gc+'.goatcounter.com/counter/TOTAL.json')
+      .then(function(r){return r.ok?r.json():Promise.reject();})
+      .then(function(j){document.getElementById('n-vis').textContent=j.count;document.getElementById('st-vis').hidden=false;})
+      .catch(function(){});
+  }
+
   /* Menu : met en évidence la section visible */
   var links={},nav=document.getElementById('nav');
   nav.querySelectorAll('a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
@@ -410,6 +454,5 @@ footer p{margin:6px 0}
   }
 })();
 </script>
-<!--GOATCOUNTER-->
 </body>
 </html>
