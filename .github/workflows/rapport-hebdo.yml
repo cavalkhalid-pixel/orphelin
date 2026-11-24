@@ -1,0 +1,31 @@
+name: Rapport hebdomadaire des téléchargements
+on:
+  schedule:
+    - cron: '0 7 * * 1'   # chaque lundi à 07:00 UTC
+  workflow_dispatch:       # lancement manuel possible
+permissions:
+  issues: write
+  contents: read
+jobs:
+  rapport:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Construire et publier le rapport
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          DATE=$(date +%F)
+          {
+            echo "@cavalkhalid-pixel : rapport automatique du $DATE."
+            echo
+            echo "| Version | Fichier | Téléchargements |"
+            echo "|---|---|---|"
+            gh api "repos/$REPO/releases" --paginate --jq '.[] | .tag_name as $t | .assets[] | "| \($t) | \(.name) | \(.download_count) |"'
+            echo
+            echo -n "**Total : **"
+            gh api "repos/$REPO/releases" --paginate --jq '[.[].assets[].download_count] | add'
+            echo
+            echo "Les visites du site sont dans GoatCounter (rapport par e-mail à activer dans ses réglages)."
+          } > rapport.md
+          gh issue create --repo "$REPO" --title "Rapport hebdomadaire : $DATE" --body-file rapport.md
