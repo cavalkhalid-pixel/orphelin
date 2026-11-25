@@ -79,8 +79,8 @@ header .btn{padding:7px 20px;font-size:.95rem}
 .logo img{display:block;border-radius:12px;flex:none}
 .logo small{font-weight:500;font-size:.78em;opacity:.75}
 @media(max-width:600px){.logo small{display:none}}
-.brandbig{display:block;width:300px;max-width:100%;height:auto;margin:0 0 18px}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brandbig{background:#f5faf8;padding:10px 16px;border-radius:18px}}
+.brandbig{display:block;width:min(100%,560px);height:auto;margin:0 0 18px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brandbig,:root:not([data-theme="light"]) .logo img{background:#f5faf8;padding:6px 10px;border-radius:14px}}
 
 .brand-tag{
   display:inline-flex;align-items:center;gap:7px;
@@ -252,7 +252,7 @@ footer p{margin:8px 0}
 <body>
 <header class="top"><div class="wrap">
   <div class="top-row">
-    <a class="logo" href="#top"><img src="img/ikram-embleme.svg" width="40" height="40" alt=""><span>إكرام <small>نظام إدارة جمعيات كفالة الأيتام والأرامل</small></span></a>
+    <a class="logo" href="#top"><img src="img/ikram-embleme.svg" width="48" height="48" alt=""><span>إكرام <small>نظام إدارة جمعيات كفالة الأيتام والأرامل</small></span></a>
     <nav class="pills" aria-label="التنقل" id="nav">
       <a href="#features">المميزات</a><a href="#how">طريقة العمل</a><a href="#screens">لقطات</a><a href="#download">التحميل</a><a href="#faq">أسئلة شائعة</a><a href="#feedback">رأيكم</a><a href="#lang">لغات</a>
     </nav>
@@ -263,7 +263,7 @@ footer p{margin:8px 0}
 <main id="top">
 <div class="hero"><div class="wrap">
   <div>
-    <img class="brandbig" src="img/ikram-logo-complet.svg" width="300" height="106" alt="إكرام – نظام إدارة جمعيات كفالة الأيتام والأرامل">
+    <img class="brandbig" src="img/ikram-logo-complet.svg" width="560" height="154" alt="إكرام – نظام إدارة جمعيات كفالة الأيتام والأرامل">
     <h1>كل ملفات جمعيتكم في تطبيق واحد، بالعربية الكاملة</h1>
     <p class="lead"><span class="brand-tag">إكرام</span> — تطبيق مكتبي لإدارة الأسر والأرامل والأيتام والكفالات والتبرعات والوصولات والاتفاقيات والتقارير. يعمل على حاسوبكم دون الحاجة إلى إنترنت، وواجهته كلها عربية من اليمين إلى اليسار.</p>
     <div class="cta">
