@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="إكرام"><rect width="200" height="200" rx="46" fill="#0f6b5c"/>
 <clipPath id="tuile"><rect width="200" height="200" rx="46"/></clipPath>
-<path d="M0 40 C14 70 14 138 0 168 Z" fill="#ed1c24" clip-path="url(#tuile)"/>
+
 <mask id="hl"><rect width="200" height="200" fill="#fff"/><circle cx="124" cy="86" r="26" fill="#000"/></mask><circle cx="108" cy="104" r="32" fill="#f2ab2e" mask="url(#hl)" transform="rotate(-20 100 100)"/>
-<clipPath id="inner"><path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70 Z"/></clipPath><clipPath id="bas"><rect x="0" y="84" width="200" height="120"/></clipPath>
-<g clip-path="url(#inner)"><path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70" fill="none" stroke="#111" stroke-width="13" stroke-linecap="butt" clip-path="url(#bas)"/></g>
+<clipPath id="inner"><path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70 Z"/></clipPath>
+<clipPath id="outer"><path clip-rule="evenodd" d="M-10 -10H210V210H-10Z M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70 Z"/></clipPath>
+<clipPath id="bas"><path d="M0 86H100V70H200V210H0Z"/></clipPath>
+<clipPath id="tete"><rect x="0" y="0" width="100" height="86"/></clipPath>
+<g clip-path="url(#outer)"><path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70" fill="none" stroke="#5fd04a" stroke-width="13" clip-path="url(#bas)"/></g>
+<g clip-path="url(#inner)"><path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70" fill="none" stroke="#111" stroke-width="13" clip-path="url(#bas)"/></g>
 <path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70" fill="none" stroke="#fff6e0" stroke-width="9" stroke-linecap="round"/>
+<path d="M42 70 C42 140 76 166 100 166 C124 166 158 140 158 70" fill="none" stroke="#ed1c24" stroke-width="9" stroke-linecap="round" clip-path="url(#tete)"/>
 <path d="M62 120 C70 142 88 150 100 150 C112 150 130 142 138 120" fill="none" stroke="#f2ab2e" stroke-width="7" stroke-linecap="round" opacity=".0"/></svg>
