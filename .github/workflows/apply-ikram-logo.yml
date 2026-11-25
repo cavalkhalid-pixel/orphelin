@@ -1,0 +1,79 @@
+name: Appliquer le logo Ikram sur index.html
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-logo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Vérifier les 4 images et modifier index.html
+        run: |
+          for f in img/ikram-embleme.svg img/ikram-embleme.png img/ikram-logo-complet.svg img/ikram-logo-complet.png; do
+            test -f "$f" || { echo "ERREUR: $f introuvable"; exit 1; }
+          done
+          ls -l img/ikram-*
+
+          python3 - <<'EOF'
+          import sys
+
+          p = "index.html"
+          s = open(p, encoding="utf-8").read()
+
+          def sub(a, b):
+              global s
+              if a not in s:
+                  sys.exit("INTROUVABLE: " + a[:70])
+              s = s.replace(a, b, 1)
+
+          sub(
+              '<title>نظام إدارة جمعيات كفالة الأيتام والأرامل – تطبيق مكتبي بالعربية</title>',
+              '<title>إكرام – نظام إدارة جمعيات كفالة الأيتام والأرامل</title>',
+          )
+          sub(
+              '<meta name="theme-color" content="#0f6b5c">',
+              '<meta name="theme-color" content="#0f6b5c">\n<link rel="icon" type="image/svg+xml" href="img/ikram-embleme.svg">\n<link rel="apple-touch-icon" href="img/ikram-embleme.png">',
+          )
+          sub(
+              '<meta property="og:title" content="نظام إدارة جمعيات كفالة الأيتام والأرامل">',
+              '<meta property="og:title" content="إكرام – نظام إدارة جمعيات كفالة الأيتام والأرامل">',
+          )
+          sub(
+              '"name":"نظام إدارة جمعيات كفالة الأيتام والأرامل","applicationCategory"',
+              '"name":"إكرام – نظام إدارة جمعيات كفالة الأيتام والأرامل","image":"https://cavalkhalid-pixel.github.io/orphelin/img/ikram-embleme.png","applicationCategory"',
+          )
+          sub(
+              '<a class="logo" href="#top"><span class="moon" aria-hidden="true">🌙</span><span>نظام إدارة جمعيات كفالة الأيتام والأرامل</span></a>',
+              '<a class="logo" href="#top"><img src="img/ikram-embleme.svg" width="40" height="40" alt=""><span>إكرام <small>نظام إدارة جمعيات كفالة الأيتام والأرامل</small></span></a>',
+          )
+          sub(
+              '/* ===== Hero ===== */',
+              '.logo img{display:block;border-radius:12px;flex:none}\n.logo small{font-weight:500;font-size:.78em;opacity:.75}\n@media(max-width:600px){.logo small{display:none}}\n.brandbig{display:block;width:300px;max-width:100%;height:auto;margin:0 0 18px}\n@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brandbig{background:#f5faf8;padding:10px 16px;border-radius:18px}}\n\n/* ===== Hero ===== */',
+          )
+          sub(
+              '<h1>كل ملفات جمعيتكم في تطبيق واحد، بالعربية الكاملة</h1>',
+              '<img class="brandbig" src="img/ikram-logo-complet.svg" width="300" height="106" alt="إكرام – نظام إدارة جمعيات كفالة الأيتام والأرامل">\n    <h1>كل ملفات جمعيتكم في تطبيق واحد، بالعربية الكاملة</h1>',
+          )
+          sub(
+              '<footer><div class="wrap">',
+              '<footer><div class="wrap">\n  <p><img src="img/ikram-embleme.svg" width="30" height="30" alt="" style="vertical-align:middle;border-radius:9px"> <strong>إكرام</strong></p>',
+          )
+
+          open(p, "w", encoding="utf-8").write(s)
+          print("OK page modifiée")
+          EOF
+
+          grep -c "ikram-" index.html
+
+      - name: Publier sur le dépôt
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --staged --quiet || (git commit -m "Logo et nom إكرام : en-tête, accueil, favicon, titre, pied de page" && git push)
